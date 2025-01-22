@@ -1,10 +1,12 @@
-"use client"
-import { RecoilRoot } from "recoil";
+"use client";
+
+import { Provider as JotaiProvider } from "jotai";
 import { SessionProvider } from "next-auth/react";
-export const Providers = ({children}: {children: React.ReactNode}) => {
-    return <RecoilRoot>
-        <SessionProvider>
-            {children}
-        </SessionProvider>
-    </RecoilRoot>
-}
+
+export const Provider = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <JotaiProvider>
+      <SessionProvider>{children}</SessionProvider>
+    </JotaiProvider>
+  );
+};

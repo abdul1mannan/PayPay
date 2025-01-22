@@ -10,8 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "jotai": "^2.11.1",
-    "recoil": "^0.7.7"
+    "jotai": "^2.11.1"
   },
   "exports": {
     "./useBalance": "./src/hooks/useBalance.ts"
