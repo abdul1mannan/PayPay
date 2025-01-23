@@ -28,8 +28,9 @@ export const AddMoney = () => {
           placeholder={"Amount"}
           onChange={() => {}}
         />
-        <div className="py-4 text-left">Bank</div>
+        <div className="py-4 text-left"></div>
         <Select
+          label={"Bank"}
           onSelect={(value) => {
             setRedirectUrl(
               SUPPORTED_BANKS.find((x) => x.name === value)?.redirectUrl || ""
