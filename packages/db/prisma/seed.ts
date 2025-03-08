@@ -43,12 +43,20 @@ async function main() {
   })
   const abdul = await prisma.user.upsert({
     where: { number: '9999999978' },
-    update: {},
+    update: {
+      balance: {
+        create: {
+          amount: 20000,
+          locked: 2000,
+        },
+      },
+    },
     create: {
       number: '9999999978',
       password: await bcrypt.hash('abdul', 10),
       name: 'abdul',
       email: 'abdul@example.com',
+    
       onRampTransaction: {
         create: {
           startTime: new Date(),

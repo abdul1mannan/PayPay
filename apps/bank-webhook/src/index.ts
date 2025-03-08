@@ -12,7 +12,7 @@ app.post("/hdfcWebhook", async (req, res) => {
   const paymentInformation = {
     token,
     userId: userId,
-    amount: Number(amount),
+    amount:amount,
   };
 
   try {
@@ -31,11 +31,12 @@ app.post("/hdfcWebhook", async (req, res) => {
 
     res.json({ message: "Captured" });
   } catch (e) {
+    console.log("error");
     console.error("Error processing webhook:", e);
     res.status(500).json({ message: "Internal Server Error" });
   }
 });
 
-app.listen(3003, () => {
-  console.log(`Server running on port 3003`);
+app.listen(3002, () => {
+  console.log(`Server running on port 3002`);
 });
